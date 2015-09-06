@@ -1,0 +1,32 @@
+<section ng-controller="reporteController" class="reporte">	
+
+	<md-input-container md-no-float class="whole">
+              <input required name="nombre" ng-model="reportaje.autor"placeholder="Nombre" class="whole">
+    </md-input-container>
+
+	<md-input-container md-no-float class="whole">
+              <input required name="nombre" ng-model="reportaje.titulo"placeholder="Título" class="whole">
+    </md-input-container>
+
+    <center>
+
+    <md-select ng-model="reportaje.departamento" placeholder="{{departamentos[0]}}" class="whole" aria-label="dep">
+              <md-option ng-repeat="depa in departamentos" value="{{depa}}" >{{depa}}</md-option>
+    </md-select>
+
+    <md-button  class="md-secundary ">
+         Seleccionar imagen
+    </md-button>
+    <br>
+    <md-button ng-click="reportaje.enviar();"  class="md-primary">
+         Enviar
+    </md-button>
+
+    </center>
+
+
+
+
+
+
+</section>

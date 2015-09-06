@@ -1,6 +1,6 @@
 var appTheme=function($mdThemingProvider){
 
       $mdThemingProvider.theme('default')
-                          .primaryPalette('blue')
+                          .primaryPalette('green')
                           	.accentPalette('red');
 };

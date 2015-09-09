@@ -9,7 +9,7 @@
    cuta el cb.
 
 */
-var messageFactory = function ($mdDialog,$mdBottomSheet){          
+var messageFactory = function ($mdDialog,$mdBottomSheet, $mdToast){  
           return{              
               showAlert:function (title,content,btn,callback,params,ev){
                           $mdDialog.show(
@@ -72,10 +72,14 @@ var messageFactory = function ($mdDialog,$mdBottomSheet){
                                   //cuando se hace un cancel desde el otro control
                                 ecb();
                             });
-                }
-              
-
+                },
+              showToast:function(content, delay) {
+                $mdToast.show(
+                  $mdToast.simple()
+                    .content(content)                    
+                    .hideDelay(delay)
+                );
+              }
           };
-        
 
 };

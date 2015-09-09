@@ -1,36 +1,32 @@
 <section ng-controller="noticiasController">
 
-	  <md-card ng-repeat="card in cards"
-
-	  >
+	  <md-card ng-repeat="card in cards">
 
 	    <md-card-content ng-click="description.show(card)" 
-			ng-class="{forbidden:card[8]=='no'}"	    	
+			ng-class="{forbidden:card.foto=='no'}"	
 	    >
 
-	      <center ng-hide="card[8]=='no'" 
-
-	      >
-	      	<div class="card-image" > 	 		
-	    		<img src="http://files.spondylus.gamaleon.com/{{card[0]}}.jpg"style="width:100%;" />
+	      <center ng-hide="card.foto=='no'">
+	      	<div class="card-image">	 		
+	    		<img src="{{card.foto}}"style="width:100%;" />
 	      	</div>
 	      </center>
 
 	      <br>
 	      <div style="width:100%;">	      		
 		      <div style="float:left">
-		        {{card[5]}}
+		        {{card.texto}}
 		      </div>
 		      <div style="float:right">
 			      <md-button class="md-raised" 
-			       ng-class="{'md-warn': card[4]=='SOS'}"
-			        ng-hide="card[8]=='no'"
-			       >{{card[4]}}
+			       ng-class="{'md-warn': card.tipo_alerta=='SOS'}"
+			        ng-hide="card.foto=='no'"
+			       >{{card.tipo_alerta}}
 			   	  </md-button>
 		      </div>
 	      </div>
 	      <br>
-	      <b>Reportero: {{card[3]}}</b>
+	      <b>Reportero: {{card.reportero}}</b>
 	    </md-card-content>    
 	  </md-card>
 

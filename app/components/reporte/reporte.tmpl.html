@@ -1,32 +1,36 @@
-<section ng-controller="reporteController" class="reporte">	
-
+<section ng-controller="reporteController" class="reporte">
+  <!-- Nombre del reportero -->
 	<md-input-container md-no-float class="whole">
-              <input required name="nombre" ng-model="reportaje.autor"placeholder="Nombre" class="whole">
+              <input required name="nombre" ng-model="reportaje.reportero"placeholder="Nombre" class="whole">
     </md-input-container>
-
+  <!-- Descripción del reporte-->
 	<md-input-container md-no-float class="whole">
-              <input required name="nombre" ng-model="reportaje.titulo"placeholder="Título" class="whole">
-    </md-input-container>
+              <input required name="nombre" ng-model="reportaje.texto"placeholder="Descripción de la noticia" class="whole">
+  </md-input-container>
 
     <center>
+    <div layout="row" layout-align="space-between center">
 
-    <md-select ng-model="reportaje.departamento" placeholder="{{departamentos[0]}}" class="whole" aria-label="dep">
-              <md-option ng-repeat="depa in departamentos" value="{{depa}}" >{{depa}}</md-option>
-    </md-select>
+      <!--Tipos de alerta-->  
+      <md-select ng-model="reportaje.tipo_alerta" placeholder="Tipos de Alerta" class="whole" aria-label="tipAlerta">
+                <md-option ng-repeat="alerta in tiposAlerta" value="{{alerta}}" >{{alerta}}</md-option>
+      </md-select>
+      <!-- Departamentos -->
+      <md-select ng-model="reportaje.departamento" placeholder="Departamento" class="whole" aria-label="dep">
+                <md-option ng-repeat="depa in departamentos" value="{{depa}}" >{{depa}}</md-option>
+      </md-select>
 
-    <md-button  class="md-secundary ">
+    </div>
+
+
+    <md-button  ng-dissabled="true" class="md-secundary ">
          Seleccionar imagen
     </md-button>
+
     <br>
-    <md-button ng-click="reportaje.enviar();"  class="md-primary">
-         Enviar
+    <md-button ng-click="reportar.enviar();"  class="md-primary">
+         Enviar reporte
     </md-button>
 
     </center>
-
-
-
-
-
-
 </section>
